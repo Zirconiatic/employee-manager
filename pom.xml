@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.zirconiatic</groupId>
 	<artifactId>employeemanager</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.2.1</version>
 	<name>employeemanager</name>
 	<description>API Monitoring using spring actuators - employeemanager</description>
 	<properties>

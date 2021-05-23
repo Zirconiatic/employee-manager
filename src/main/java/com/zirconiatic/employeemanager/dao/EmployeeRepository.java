@@ -1,6 +1,5 @@
 package com.zirconiatic.employeemanager.dao;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.data.jpa.repository.JpaRepository;
