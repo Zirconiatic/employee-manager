@@ -1,5 +1,7 @@
 package com.zirconiatic.employeemanager.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +19,25 @@ public class UserRegistrationImpl implements UserRegistration {
 	private RegistrationRepository registrationRepository;
 	
 	@Override
-	public boolean saveRegisteredUser(Registration registration) {
+	public boolean saveUserDetails(Registration registration) {
 		
-		Registration savedRegistration = null;
+		//check if the user is already present
+		Optional<Registration> isUserRegistered = registrationRepository.findById(registration.getPhoneNumeber());
 		
-		if(validation.isValidString(registration.getName())) {
-			savedRegistration = registrationRepository.saveAndFlush(registration);
+		if(isUserRegistered.isEmpty()) {
+			//save the user in the repository
+			Registration savedRegistration = null;
+			
+			if(validation.isValidString(registration.getName())) {
+				savedRegistration = registrationRepository.saveAndFlush(registration);
+			}
+			
+			return (savedRegistration != null);
 		}
 		
-		return (savedRegistration != null);
+		//else log the registered user details and return false
+		
+		return false;
 	}
 
 	@Override
