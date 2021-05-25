@@ -22,7 +22,7 @@ public class UserRegistrationImpl implements UserRegistration {
 	public boolean saveUserDetails(Registration registration) {
 		
 		//check if the user is already present
-		Optional<Registration> isUserRegistered = registrationRepository.findById(registration.getPhoneNumeber());
+		Optional<Registration> isUserRegistered = registrationRepository.findById(registration.getPhoneNumber());
 		
 		if(isUserRegistered.isEmpty()) {
 			//save the user in the repository

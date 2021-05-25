@@ -1,5 +1,7 @@
 package com.zirconiatic.employeemanager.entity;
 
+import java.math.BigInteger;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,7 +9,7 @@ import javax.persistence.Id;
 public class Registration {
 
 	@Id
-	private int phoneNumber;
+	private long phoneNumber;
 	
 	private String name;
 	
@@ -21,12 +23,12 @@ public class Registration {
 	
 	private int pincode;
 	
-	public int getPhoneNumeber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumeber(int phoneNumeber) {
-		this.phoneNumber = phoneNumeber;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getName() {
@@ -79,7 +81,7 @@ public class Registration {
 
 	@Override
 	public String toString() {
-		return "Registration [phoneNumeber=" + phoneNumber + ", name=" + name + ", password=" + password + ", gender="
+		return "Registration [phoneNumber=" + phoneNumber + ", name=" + name + ", password=" + password + ", gender="
 				+ gender + ", emailId=" + emailId + ", address=" + address + ", pincode=" + pincode + "]";
 	}
 
