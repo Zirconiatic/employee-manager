@@ -53,7 +53,7 @@ public class EmployeeManagementController {
 		return hsmp;
 	}
 	
-	@ResponseStatus(code = HttpStatus.OK)
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	@DeleteMapping(value = "/delete/employee/details")
 	public Map<String, Integer> deleteEmployee(@RequestParam int employeeId){
 		
